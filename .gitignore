@@ -1,1 +1,16 @@
-dist/
+# Local development files
+/.env
+/.forge
+*.sqlite3
+
+# Publishing
+/dist
+
+# Python
+/.venv
+__pycache__/
+*.py[cod]
+*$py.class
+
+# OS files
+.DS_Store
