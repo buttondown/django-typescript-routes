@@ -58,5 +58,5 @@ INSTALLED_APPS = [
 2. Run the management command to print out the typescript file:
 
 ```bash
-python manage.py generate_typescript_routes --conf projectname.urls > assets/urls.ts
+python manage.py generate_typescript_routes --urlconf projectname.urls > assets/urls.ts
 ```
