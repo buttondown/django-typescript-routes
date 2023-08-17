@@ -3,7 +3,6 @@ from typing import Iterable
 
 from django.template.loader import render_to_string
 from django.urls import URLResolver, get_resolver
-from django.urls.converters import StringConverter, IntConverter
 
 DJANGO_CONVERTER_NAME_TO_TYPESCRIPT_TYPE = {
     "StringConverter": "string",

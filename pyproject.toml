@@ -15,6 +15,7 @@ python = "^3.11"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.4.0"
+ruff = "^0.0.284"
 
 [build-system]
 build-backend = "poetry.core.masonry.api"
