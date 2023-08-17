@@ -1,0 +1,4 @@
+const URLS = {{% for route in routes %}
+    '{{ route.name }}': ({% for param in route.params %}{{ param.name }}: {{ param.typescript_type}}{% if not forloop.last%}, {% endif %}{% endfor %}) => `/{{ route.template }}`,{% endfor %}
+};
+export default URLS;

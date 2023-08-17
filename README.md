@@ -6,7 +6,7 @@ Meant as a spiritual successor to [django-js-reverse](https://pypi.org/project/d
 
 `django-typescript-routes` is how! At a high level, it turns:
 
-```
+```python
 urls = [
     path(
         r"about",
@@ -28,19 +28,26 @@ urls = [
 
 into:
 
-```
+```typescript
 const URLS = {
-    'about': () => `/`,
-    'subscribe': (username: string) => `/${username}`,
-    'subscription-success': (username: string, pk: string) => `/${username}/subscribers/${pk}/success`,
-}
+  about: () => `/`,
+  subscribe: (username: string) => `/${username}`,
+  "subscription-success": (username: string, pk: string) =>
+    `/${username}/subscribers/${pk}/success`,
+};
 ```
 
 ## Quick start
 
+1. Install:
+
+```bash
+poetry add --dev django-typescript-routes
+```
+
 1. Add `django-typescript-routes` to your `INSTALLED_APPS` setting:
 
-```
+```python
 INSTALLED_APPS = [
     ...,
     "typescript_routes",
@@ -50,6 +57,6 @@ INSTALLED_APPS = [
 
 2. Run the management command to print out the typescript file:
 
-```
+```bash
 python manage.py generate_typescript_routes --conf projectname.urls > assets/urls.ts
 ```
