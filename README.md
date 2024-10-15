@@ -60,3 +60,13 @@ INSTALLED_APPS = [
 ```bash
 python manage.py generate_typescript_routes --urlconf projectname.urls > assets/urls.ts
 ```
+
+## Contributing
+
+### Running the test suite
+
+Simply:
+
+```
+./scripts/test
+```

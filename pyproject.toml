@@ -6,11 +6,11 @@ name = "django-typescript-routes"
 packages = [{ include = "typescript_routes" }]
 readme = "README.md"
 repository = "https://github.com/buttondown-email/django-typescript-routes"
-version = "0.1.1"
+version = "0.2.0"
 
 
 [tool.poetry.dependencies]
-Django = "^4"
+Django = "^5"
 python = "^3.11"
 
 [tool.poetry.group.dev.dependencies]
