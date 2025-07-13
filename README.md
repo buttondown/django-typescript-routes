@@ -42,7 +42,7 @@ const URLS = {
 1. Install:
 
 ```bash
-poetry add --dev django-typescript-routes
+uv add django-typescript-routes
 ```
 
 1. Add `django-typescript-routes` to your `INSTALLED_APPS` setting:

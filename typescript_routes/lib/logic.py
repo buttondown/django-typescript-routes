@@ -65,4 +65,7 @@ def extract_routes(resolver: URLResolver, denylist: list[str]) -> Iterable[Route
 def generate_routes(urlconf: str, denylist: list[str]) -> str:
     resolver = get_resolver(urlconf)
     routes = extract_routes(resolver, denylist)
-    return render_to_string("urls.ts.template", {"routes": routes})
+    rendered_string = render_to_string("urls.ts.template", {"routes": routes})
+    # Remove all empty lines injected via the template.
+    rendered_string = "\n".join(line for line in rendered_string.split("\n") if line.strip())
+    return rendered_string.strip() + "\n"

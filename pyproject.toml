@@ -1,22 +1,28 @@
-[tool.poetry]
-authors = ["Justin Duke <justin@buttondown.email>"]
-description = "Generate typescript routes from a Django URLconf"
-license = "MIT"
+[project]
 name = "django-typescript-routes"
-packages = [{ include = "typescript_routes" }]
+version = "0.3.0"
+description = "Generate typescript routes from a Django URLconf"
+authors = [{ name = "Justin Duke", email = "justin@buttondown.email" }]
+requires-python = "~=3.11"
 readme = "README.md"
-repository = "https://github.com/buttondown-email/django-typescript-routes"
-version = "0.2.0"
+license = "MIT"
+dependencies = ["Django>=5,<6"]
 
+[project.urls]
+Repository = "https://github.com/buttondown-email/django-typescript-routes"
 
-[tool.poetry.dependencies]
-Django = "^5"
-python = "^3.11"
+[dependency-groups]
+dev = [
+    "pytest>=7.4.0,<8",
+    "ruff>=0.0.284,<0.0.285",
+]
 
-[tool.poetry.group.dev.dependencies]
-pytest = "^7.4.0"
-ruff = "^0.0.284"
+[tool.hatch.build.targets.sdist]
+include = ["typescript_routes"]
+
+[tool.hatch.build.targets.wheel]
+include = ["typescript_routes"]
 
 [build-system]
-build-backend = "poetry.core.masonry.api"
-requires = ["poetry-core"]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
