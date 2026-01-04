@@ -67,5 +67,7 @@ def generate_routes(urlconf: str, denylist: list[str]) -> str:
     routes = extract_routes(resolver, denylist)
     rendered_string = render_to_string("urls.ts.template", {"routes": routes})
     # Remove all empty lines injected via the template.
-    rendered_string = "\n".join(line for line in rendered_string.split("\n") if line.strip())
+    rendered_string = "\n".join(
+        line for line in rendered_string.split("\n") if line.strip()
+    )
     return rendered_string.strip() + "\n"

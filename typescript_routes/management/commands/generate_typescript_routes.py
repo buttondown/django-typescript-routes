@@ -1,10 +1,10 @@
+from django.core.management.base import BaseCommand, CommandParser
+
 from typescript_routes.lib.logic import generate_routes
-from django.core.management.base import BaseCommand
-from django.core.management.base import CommandParser
 
 
 class Command(BaseCommand):
-    help = 'Prints a static TypeScript file that can be used to reverse Django URLs.'
+    help = "Prints a static TypeScript file that can be used to reverse Django URLs."
 
     def add_arguments(self, parser: CommandParser) -> None:
         parser.add_argument("-u", "--urlconf", type=str)
